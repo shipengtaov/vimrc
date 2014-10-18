@@ -98,8 +98,8 @@ autocmd BufReadPost *
     \ endif
 set background=dark
 "colorscheme solarized
-"colorscheme molokai
-colorscheme mac_classic
+colorscheme molokai
+"colorscheme mac_classic
 "colorscheme mac_classic
 "设置显示每行开头结尾标志
 set list
