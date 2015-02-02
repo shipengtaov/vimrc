@@ -1,4 +1,6 @@
 set nocompatible
+source $VIMRUNTIME/vimrc_example.vim
+runtime macros/matchit.vim
 
 set diffexpr=MyDiff()
 function MyDiff()
@@ -39,7 +41,6 @@ set encoding=utf-8
 "文件格式
 set fileformats=unix,dos
 
-
 let mapleader=","
 let g:mapleader=","
 filetype on
@@ -48,8 +49,8 @@ filetype indent on
 filetype plugin on
 let &termencoding=&encoding
 "解决菜单乱码
-"source $VIMRUNTIME/delmenu.vim
-"source $VIMRUNTIME/menu.vim
+source $VIMRUNTIME/delmenu.vim
+source $VIMRUNTIME/menu.vim
 "解决consle输出乱码
 language messages zh_CN.utf-8
 
@@ -93,13 +94,13 @@ autocmd BufReadPost *
     \ exe "normal g'\"" |
     \ endif
 "set background=dark
-""colorscheme solarized
+"colorscheme solarized
 "colorscheme molokai
 "colorscheme mac_classic
 "colorscheme mac_classic
 "设置显示每行开头结尾标志
-"set list
-"set listchars=tab:▸\ ,eol:¬
+set list
+set listchars=tab:▸\ ,eol:¬
 "设置默认大小
 "set lines=32 columns=123
 
@@ -146,8 +147,6 @@ endfunction
 "
 "自动补全选项
 set completeopt=menu,longest
-"设置vim默认目录
-"cd d:\wamp\wamp\www
 "Switch CWD to the directory of the open buffer
 map <leader>cd :cd %:p:h<cr>:pwd<cr>
 "execute "NERDTree ".expand('%:p:h')
@@ -156,7 +155,7 @@ map <leader>cd :cd %:p:h<cr>:pwd<cr>
 "set fdm=indent
 "开启persistent undo
 set undofile
-set undodir=~/.vim/\_undodir
+set undodir=~/.vim/undodir
 
 "设置tab和缩进
 set shiftwidth=4
@@ -208,12 +207,6 @@ inoremap <C-\> <ESC>ua
 "inoremap <C-k> <ESC>ka
 "inoremap <C-l> <ESC>la
 "
-"自动补全
-"inoremap ( ()<ESC>i
-"自动补全{}
-"imap { {}<ESC>i
-"imap { {}<ESC>i<CR><ESC>O
-
 
 "编辑.vimrc文件快捷键
 nnoremap <silent> <Leader>ee :e ~/.vimrc<CR>
@@ -226,10 +219,8 @@ nnoremap k gk
 nnoremap ; :
 "
 "<ESC>映射取消高亮
-nnoremap <ESC> :nohl<return><ESC>
-"<F5>显示时间
-nnoremap <F5> "=strftime("%Y %b %d %X")<CR>gp
-inoremap <F5> <C-R>=strftime("%Y %b %d %X")<CR>
+"nnoremap <ESC> :nohl<return><ESC>
+nnoremap <silent> <CR> :nohl<CR>
 "切换标签页
 "inoremap <C-h> <ESC>:tabprevious<CR>
 nnoremap <C-h> :tabprevious<CR>
@@ -243,18 +234,14 @@ vnoremap <C-l> <ESC>:tabnext<CR>
 "<tab>映射<C-k>%
 nnoremap <tab> %
 vnoremap <tab> %
-"设置全屏
-"set winaltkeys=no
-"nnoremap <M-x> :simalt ~x<CR>
-"nnoremap <M-r> :simalt ~r<CR>
-"nnoremap <M-n> :simalt ~n<CR>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "F3 NERDTree
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "非插入模式下
-map <F3> :NERDTreeToggle<CR>
+"map <F3> :NERDTreeToggle<CR>
+map :fl :NERDTreeToggle<CR>
 "插入模式下
-imap <F3> <ESC> :NERDTreeToggle<CR>
+"imap <F3> <ESC> :NERDTreeToggle<CR>
 let NERDTreeShowBookmarks=1
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "FuzzyFinder
