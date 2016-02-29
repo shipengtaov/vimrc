@@ -52,7 +52,7 @@ let &termencoding=&encoding
 source $VIMRUNTIME/delmenu.vim
 source $VIMRUNTIME/menu.vim
 "解决consle输出乱码
-language messages zh_CN.utf-8
+"language messages zh_CN.utf-8
 
 "set guifont=Consolas:h11
 set nu
